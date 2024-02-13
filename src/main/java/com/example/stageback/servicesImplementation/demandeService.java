@@ -76,7 +76,7 @@ public class demandeService {
         demande d = demandeRep.findById(demandeId).orElse(null);
         if (d != null) {
             User currentUser = authenticationService.currentlyAuthenticatedUser();
-            if (currentUser.getRole().equals("MODERATEUR")) {
+            if (currentUser.getRole().equals("MOD")) {
                 if (estAcceptee) {
                     d.setStatusDemande("A traiter par l'admin");
                 } else {
